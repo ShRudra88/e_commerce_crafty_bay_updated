@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../data/models/product_model.dart';
 import '../../state_holders/home_banner_controller.dart';
 import '../../state_holders/main_bottom_nav_controller.dart';
 import '../widget/center_circular_progress_indicator.dart';

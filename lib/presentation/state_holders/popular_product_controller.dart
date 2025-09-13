@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import '../../data/models/product_list_model.dart';
+import '../../data/services/network_caller.dart';
+import '../../data/utility/urls.dart';
+
 class PopularProductController extends GetxController {
   bool _inProgress = false;
 

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../state_holders/cart_list_controller.dart';
 import '../../state_holders/main_bottom_nav_controller.dart';
+import '../helping_widgets/cart_product_item.dart';
+import '../helping_widgets/center_circular_progress_indicator.dart';
 import '../utility/app_colors.dart';
-import '../widget/center_circular_progress_indicator.dart';
+
 
 
 class CartListScreen extends StatefulWidget {

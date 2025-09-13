@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../state_holders/category_controller.dart';
 import '../../state_holders/main_bottom_nav_controller.dart';
+import '../helping_widgets/category_item.dart';
+import '../helping_widgets/center_circular_progress_indicator.dart';
 import '../utility/app_colors.dart';
-import '../widget/center_circular_progress_indicator.dart';
+
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({super.key});
@@ -54,7 +56,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 replacement: CenterCircularProgressIndicator(),
                 child: GridView.builder(
                     itemCount: categoryController
-                        .categoryListModel?.categoryListItem?.length ??
+                        .categoryListModel.categoryListItem?.length ??
                         0,
                     gridDelegate:
                     const SliverGridDelegateWithFixedCrossAxisCount(

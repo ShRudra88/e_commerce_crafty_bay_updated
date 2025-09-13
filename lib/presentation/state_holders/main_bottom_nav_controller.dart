@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'auth_controlller.dart';
+import 'auth_controller.dart';
 
 class MainBottomNavController extends GetxController {
   final int _selctedIndex = 0;

@@ -1,12 +1,11 @@
 
-
 import 'package:get/get.dart';
 
-import '../../data/models/banner_list_model.dart';
+import '../../data/models/product_list_model.dart';
 import '../../data/services/network_caller.dart';
 import '../../data/utility/urls.dart';
 
-class HomeBannerController extends GetxController {
+class ProductController extends GetxController {
   bool _inProgress = false;
 
   bool get inProgress => _inProgress;
@@ -15,18 +14,19 @@ class HomeBannerController extends GetxController {
 
   String get errorMessage => _errorMessage;
 
-  BannerListModel _bannerListModel = BannerListModel();
+  ProductListModel _productListModel = ProductListModel();
 
-  BannerListModel get bannerListModel => _bannerListModel;
+  ProductListModel get productListModel => _productListModel;
 
-  Future<bool> getBannerList() async {
+  Future<bool> getProductList({required int categoryId}) async {
     bool isSuccess = false;
     _inProgress = true;
     update();
-    final response = await NetworkCaller().getRequest(Urls.homeBanner);
+    final response =
+    await NetworkCaller().getRequest(Urls.productsByCategory(categoryId));
     _inProgress = false;
     if (response.isSuccess) {
-      _bannerListModel = BannerListModel.fromJson(response.responseData);
+      _productListModel = ProductListModel.fromJson(response.responseData);
       isSuccess = true;
     } else {
       _errorMessage = response.errorMessage;

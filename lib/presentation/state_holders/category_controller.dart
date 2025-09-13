@@ -2,6 +2,10 @@
 
 import 'package:get/get.dart';
 
+import '../../data/models/category_list_model.dart';
+import '../../data/services/network_caller.dart';
+import '../../data/utility/urls.dart';
+
 class CategoryController extends GetxController {
   bool _inProgress = false;
 
