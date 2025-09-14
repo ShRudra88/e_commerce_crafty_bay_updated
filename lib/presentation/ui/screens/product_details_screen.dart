@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/models/product_details_data.dart';
+import '../../state_holders/add_to_controller.dart';
 import '../../state_holders/auth_controller.dart';
 import '../../state_holders/product_details_controller.dart';
+import '../helping_widgets/center_circular_progress_indicator.dart';
+import '../helping_widgets/color_selector.dart';
+import '../helping_widgets/product_image_carosol.dart';
+import '../helping_widgets/size_selector.dart';
 import '../utility/app_colors.dart';
-import '../widget/center_circular_progress_indicator.dart';
-import '../widget/product_image_carosol.dart';
+import 'auth/verify_email_screen.dart';
+
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key, required this.productId});
