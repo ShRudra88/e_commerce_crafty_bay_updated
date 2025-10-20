@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../data/models/create_profile_params.dart';
 import '../../../state_holders/complete_profile_controller.dart';
 import '../../../state_holders/verify_otp_controller.dart';
-import '../../widget/app_logo.dart';
-import '../../widget/center_circular_progress_indicator.dart';
+import '../../helping_widgets/app_logo.dart';
+import '../../helping_widgets/center_circular_progress_indicator.dart';
 import '../main_bottom_nav_screen.dart';
 
 class CompleteProfileScreen extends StatefulWidget {

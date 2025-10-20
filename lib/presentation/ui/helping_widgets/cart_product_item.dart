@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../data/models/cart_item.dart';
 import '../../state_holders/cart_list_controller.dart';
 import '../utility/app_colors.dart';
+import 'package:item_count_number_button/item_count_number_button.dart';
 
 class CartProductItem extends StatefulWidget {
   const CartProductItem({super.key, required this.cartItem});
