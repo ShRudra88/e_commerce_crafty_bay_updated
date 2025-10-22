@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../state_holders/auth_controller.dart';
 import '../../helping_widgets/app_logo.dart';
+import '../main_bottom_nav_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 2),
     );
     await Get.find<AuthController>().initialize();
-    //Get.offAll(const MainBottomNavScreen());
+    Get.offAll(const MainBottomNavScreen());
   }
 
   @override
