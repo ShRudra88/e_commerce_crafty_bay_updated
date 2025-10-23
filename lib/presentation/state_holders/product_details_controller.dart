@@ -5,9 +5,6 @@ import '../../data/models/response_data.dart';
 import '../../data/services/network_caller.dart';
 import '../../data/utility/urls.dart';
 
-
-
-
 class ProductDetailsController extends GetxController {
   bool _inProgress = false;
 

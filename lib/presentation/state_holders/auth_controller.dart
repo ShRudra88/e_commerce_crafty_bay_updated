@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../data/models/profile.dart';
+import '../ui/screens/auth/verify_email_screen.dart';
 
 class AuthController extends GetxController {
   static String? token;
@@ -49,6 +50,6 @@ class AuthController extends GetxController {
   }
 
   static Future<void> goToLogin() async {
-    //Get.to(() => const VerifyEmailScreen());
+    Get.to(() => const VerifyEmailScreen());
   }
 }

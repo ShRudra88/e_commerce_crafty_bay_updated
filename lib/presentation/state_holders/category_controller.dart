@@ -1,5 +1,3 @@
-
-
 import 'package:get/get.dart';
 
 import '../../data/models/category_list_model.dart';
