@@ -1,3 +1,4 @@
+import 'package:e_commerce_crafty_bay_updated/presentation/ui/screens/auth/verify_email_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../state_holders/auth_controller.dart';
@@ -22,9 +23,17 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(
       const Duration(seconds: 2),
     );
-    await Get.find<AuthController>().initialize();
-    Get.offAll(const MainBottomNavScreen());
+
+    AuthController auth = Get.find<AuthController>();
+    await auth.initialize();
+
+    if (auth.isTokenNotNull) {
+      Get.offAll(const MainBottomNavScreen());
+    } else {
+      Get.offAll(() => const VerifyEmailScreen());
+    }
   }
+
 
   @override
   Widget build(BuildContext context) {
