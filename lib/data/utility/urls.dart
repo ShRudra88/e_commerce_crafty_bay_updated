@@ -1,6 +1,5 @@
 class Urls {
  // static const String _baseUrl = 'http://ecom-api.teamrabbil.com/api';
-  //static const String _baseUrl = 'https://fakestoreapi.com';
   static const String _baseUrl = 'https://ecom-rs8e.onrender.com/api';
 
 

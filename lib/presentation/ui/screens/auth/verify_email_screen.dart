@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../state_holders/send_email_otp_controller.dart';
 import '../../helping_widgets/app_logo.dart';
+import '../main_bottom_nav_screen.dart';
 import 'verify_otp_screen.dart';
 
 class VerifyEmailScreen extends StatefulWidget {
@@ -76,30 +77,47 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                       replacement: const Center(
                         child: CircularProgressIndicator(),
                       ),
-                      child: ElevatedButton(
-                        onPressed: () async {
-                          if (_formKey.currentState!.validate()) {
-                            final bool result = await controller
-                                .sendOtpToEmail(_emailTEController.text.trim());
-                            if (result) {
-                              Get.to(() => VerifyOTPScreen(
-                                email: _emailTEController.text.trim(),
-                              ));
-                            } else {
-                              Get.showSnackbar(GetSnackBar(
-                                title: 'Send OTP failed',
-                                message: controller.errorMessage,
-                                duration: Duration(seconds: 2),
-                                isDismissible: true,
-                              ));
-                            }
-                          }
-                        },
-                        child: const Text('Next'),
+                      child: Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () async {
+                              if (_formKey.currentState!.validate()) {
+                                final bool result = await controller
+                                    .sendOtpToEmail(_emailTEController.text.trim());
+                                if (result) {
+                                  Get.to(() => VerifyOTPScreen(
+                                    email: _emailTEController.text.trim(),
+                                  ));
+                                } else {
+                                  Get.showSnackbar(GetSnackBar(
+                                    title: 'Send OTP failed',
+                                    message: controller.errorMessage,
+                                    duration: Duration(seconds: 2),
+                                    isDismissible: true,
+                                  ));
+                                }
+                              }
+                            },
+                            child: const Text('Next'),
+                          ),
+
+                          const SizedBox(height: 10),
+
+                          TextButton(
+                            onPressed: ()  {
+                              Get.to(() => const MainBottomNavScreen());
+                            },
+                            child: const Text(
+                              "Continue as Guest",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   );
-                }),
+                })
+
               ],
             ),
           ),

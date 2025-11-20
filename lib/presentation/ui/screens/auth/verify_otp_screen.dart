@@ -32,7 +32,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
   }
 
   void countOTPTimer() {
-   // const oneSec = Duration(milliseconds: 1000);
+    const oneSec = Duration(milliseconds: 1000);
   }
 
   @override
