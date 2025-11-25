@@ -16,7 +16,9 @@ class ProductCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(() => ProductDetailsScreen(productId: product.id!));
+        if (product.id != null) {
+          Get.to(() => ProductDetailsScreen(productId: product.id!));
+        }
       },
       borderRadius: BorderRadius.circular(16),
       child: SizedBox(
@@ -29,7 +31,6 @@ class ProductCardItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /// 🔥 safe image loader with fallback
               ClipRRect(
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),

@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 16),
 
               SectionTitle(title: 'Special', onTapSeeAll: () {
-
+                Get.to(() => const ProductListScreen());
               }),
               GetBuilder<SpecialProductController>(
                 builder: (specialProductController) {
@@ -99,7 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
               const SizedBox(height: 16),
 
-              SectionTitle(title: 'New', onTapSeeAll: () {}),
+              SectionTitle(title: 'New', onTapSeeAll: () {
+                Get.to(() => const ProductListScreen());
+              }),
               GetBuilder<NewProductController>(
                 builder: (newProductController) {
                   return Visibility(

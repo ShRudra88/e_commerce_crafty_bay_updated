@@ -7,24 +7,31 @@ import '../../data/utility/urls.dart';
 
 class ProductDetailsController extends GetxController {
   bool _inProgress = false;
-
-  ProductDetailsModel _productDetailsModel = ProductDetailsModel();
-
+  ProductDetailsModel? _productDetailsModel;
   String _errorMessage = '';
 
   bool get inProgress => _inProgress;
 
-  ProductDetailsData get productDetails =>
-      _productDetailsModel.productDetailsDataList!.first;
+  ProductDetailsData? get productDetails {
+    if (_productDetailsModel == null ||
+        _productDetailsModel!.productDetailsDataList == null ||
+        _productDetailsModel!.productDetailsDataList!.isEmpty) {
+      return null;
+    }
+    return _productDetailsModel!.productDetailsDataList!.first;
+  }
 
   String get errorMessage => _errorMessage;
 
   Future<bool> getProductDetails(int productId) async {
-    bool isSuccess = false;
     _inProgress = true;
     update();
+
     final ResponseData response =
     await NetworkCaller().getRequest(Urls.productDetails(productId));
+
+    bool isSuccess = false;
+
     if (response.isSuccess) {
       _productDetailsModel =
           ProductDetailsModel.fromJson(response.responseData);
@@ -32,6 +39,7 @@ class ProductDetailsController extends GetxController {
     } else {
       _errorMessage = response.errorMessage;
     }
+
     _inProgress = false;
     update();
     return isSuccess;
