@@ -3,7 +3,7 @@ class Urls {
   static const String _baseUrl = 'https://ecom-rs8e.onrender.com/api';
 
 
-  static String sentEmailOtp(String email) => '$_baseUrl/auth/login/$email';
+  static String sentEmailOtp(String email) => '$_baseUrl/auth/login';
 
   static String verifyOtp(String email, String otp) =>
       '$_baseUrl/auth/verify-otp/$email/$otp';
@@ -11,7 +11,7 @@ class Urls {
   static String readProfile = '$_baseUrl/auth/profile';
   static String createProfile = '$_baseUrl/auth/signup';
   static String homeBanner = '$_baseUrl/ListProductSlider';
-  static String categoryList = '$_baseUrl/CategoryList';
+  static String categoryList = '$_baseUrl/categories';
   static String popularProduct = '$_baseUrl/ListProductByRemark/Popular';
   static String specialProduct = '$_baseUrl/ListProductByRemark/Special';
   static String newProduct = '$_baseUrl/ListProductByRemark/New';

@@ -7,8 +7,6 @@ import '../helping_widgets/center_circular_progress_indicator.dart';
 import '../utility/app_colors.dart';
 import 'checkout_screen.dart';
 
-
-
 class CartListScreen extends StatefulWidget {
   const CartListScreen({super.key});
 
