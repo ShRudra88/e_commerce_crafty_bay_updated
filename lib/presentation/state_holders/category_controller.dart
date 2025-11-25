@@ -25,9 +25,6 @@ class CategoryController extends GetxController {
     _inProgress = false;
 
     if (response.isSuccess) {
-      // ----------------------------
-      // API SUCCESS BUT CHECK NULL
-      // ----------------------------
       if (response.responseData == null ||
           response.responseData["data"] == null ||
           response.responseData["data"]["results"] == null ||
@@ -36,12 +33,8 @@ class CategoryController extends GetxController {
       } else {
         _categoryListModel = CategoryListModel.fromJson(response.responseData);
       }
-
       isSuccess = true;
     } else {
-      // ----------------------------
-      // API FAILED → dummy data
-      // ----------------------------
       _errorMessage = response.errorMessage;
       _categoryListModel = _dummyCategories();
       isSuccess = true;
@@ -52,44 +45,64 @@ class CategoryController extends GetxController {
   }
 
   // ------------------------------------------------
-  // DUMMY CATEGORIES FOR OFFLINE / ERROR CONDITION
+  // UPDATED DUMMY CATEGORIES WITH REAL PICTURES
   // ------------------------------------------------
   CategoryListModel _dummyCategories() {
     return CategoryListModel(
       msg: "Dummy categories loaded",
-      total: 6,
+      total: 10,
       next: null,
       lastPage: 1,
       categoryListItem: [
         CategoryListItem(
           id: 1,
           categoryName: "Electronics",
-          categoryImg: "https://placehold.co/200x200?text=Electronics",
+          categoryImg: "https://picsum.photos/seed/electronics/200",
         ),
         CategoryListItem(
           id: 2,
           categoryName: "Fashion",
-          categoryImg: "https://placehold.co/200x200?text=Fashion",
+          categoryImg: "https://picsum.photos/seed/fashion/200",
         ),
         CategoryListItem(
           id: 3,
           categoryName: "Grocery",
-          categoryImg: "https://placehold.co/200x200?text=Grocery",
+          categoryImg: "https://picsum.photos/seed/grocery/200",
         ),
         CategoryListItem(
           id: 4,
           categoryName: "Home Decor",
-          categoryImg: "https://placehold.co/200x200?text=Home+Decor",
+          categoryImg: "https://picsum.photos/seed/homedecor/200",
         ),
         CategoryListItem(
           id: 5,
           categoryName: "Beauty",
-          categoryImg: "https://placehold.co/200x200?text=Beauty",
+          categoryImg: "https://picsum.photos/seed/beauty/200",
         ),
         CategoryListItem(
           id: 6,
           categoryName: "Sports",
-          categoryImg: "https://placehold.co/200x200?text=Sports",
+          categoryImg: "https://picsum.photos/seed/sports/200",
+        ),
+        CategoryListItem(
+          id: 7,
+          categoryName: "Toys",
+          categoryImg: "https://picsum.photos/seed/toys/200",
+        ),
+        CategoryListItem(
+          id: 8,
+          categoryName: "Furniture",
+          categoryImg: "https://picsum.photos/seed/furniture/200",
+        ),
+        CategoryListItem(
+          id: 9,
+          categoryName: "Books",
+          categoryImg: "https://picsum.photos/seed/books/200",
+        ),
+        CategoryListItem(
+          id: 10,
+          categoryName: "Automobile",
+          categoryImg: "https://picsum.photos/seed/automobile/200",
         ),
       ],
     );
